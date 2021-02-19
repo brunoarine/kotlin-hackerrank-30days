@@ -1,5 +1,5 @@
 // Day 11: given a 6x6 2D-array A, calculate the hourglass sum for every hourglass in it,
-// then print the maximum hourglass sum.
+// then print the maximum hourglass sum..
 
 import java.util.*
 
