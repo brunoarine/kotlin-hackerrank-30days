@@ -24,10 +24,19 @@ open class Person (var firstName: String, var lastName: String, var idNumber: In
 }
 
 class Student(firstName: String,
-                       lastName: String,
-                       idNumber: Int,
-                       testScores: IntArray): Person(firstName, lastName, idNumber) {
-
+              lastName: String,
+              idNumber: Int,
+              val testScores: IntArray): Person(firstName, lastName, idNumber) {
+    fun calculate() {
+        when (testScores.average()) {
+            in 90.0..100.0  -> "O"
+            in 80.0..89.0   -> "E"
+            in 70.0..79.0   -> "A"
+            in 55.0..69.0   -> "P"
+            in 40.0..54.0   -> "D"
+            else            -> "T"
+        }
+    }
 }
 
 internal object Solution {
