@@ -39,17 +39,17 @@ class Student(firstName: String,
     }
 }
 fun main() {
-        val scan = Scanner(System.`in`)
-        val firstName = scan.nextLine()
-        val lastName = scan.nextLine()
-        val id = scan.nextInt()
-        val numScores = scan.nextInt()
-        val testScores = IntArray(numScores)
-        for (i in 0 until numScores) {
-            testScores[i] = scan.nextInt()
-        }
-        scan.close()
-        val s = Student(firstName, lastName, id, testScores)
-        s.printPerson()
-        System.out.println("Grade: " + s.calculate())
+    val scan = Scanner(System.`in`)
+    val firstName = scan.nextLine()
+    val lastName = scan.nextLine()
+    val id = scan.nextInt()
+    val numScores = scan.nextInt()
+    val testScores = IntArray(numScores)
+    for (i in 0 until numScores) {
+        testScores[i] = scan.nextInt()
     }
+    scan.close()
+    val s = Student(firstName, lastName, id, testScores)
+    s.printPerson()
+    System.out.println("Grade: " + s.calculate())
+}
