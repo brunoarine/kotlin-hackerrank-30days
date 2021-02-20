@@ -27,24 +27,21 @@ class Student(firstName: String,
               lastName: String,
               idNumber: Int,
               val testScores: IntArray): Person(firstName, lastName, idNumber) {
-    fun calculate() {
-        when (testScores.average()) {
-            in 90.0..100.0  -> "O"
-            in 80.0..89.0   -> "E"
-            in 70.0..79.0   -> "A"
-            in 55.0..69.0   -> "P"
-            in 40.0..54.0   -> "D"
-            else            -> "T"
+    fun calculate():Char {
+        return when (testScores.average()) {
+            in 90.0..100.0  -> 'O'
+            in 80.0..89.0   -> 'E'
+            in 70.0..79.0   -> 'A'
+            in 55.0..69.0   -> 'P'
+            in 40.0..54.0   -> 'D'
+            else            -> 'T'
         }
     }
 }
-
-internal object Solution {
-    @JvmStatic
-    fun main(args: Array<String>) {
+fun main() {
         val scan = Scanner(System.`in`)
-        val firstName = scan.next()
-        val lastName = scan.next()
+        val firstName = scan.nextLine()
+        val lastName = scan.nextLine()
         val id = scan.nextInt()
         val numScores = scan.nextInt()
         val testScores = IntArray(numScores)
@@ -56,4 +53,3 @@ internal object Solution {
         s.printPerson()
         System.out.println("Grade: " + s.calculate())
     }
-}
